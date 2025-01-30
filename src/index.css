@@ -57,7 +57,12 @@
 }
 
 .hover-glow {
-  @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(234,56,76,0.3)];
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(234, 56, 76, 0.3);
+  background: linear-gradient(145deg, rgba(234, 56, 76, 0.1), rgba(234, 56, 76, 0.05));
 }
 
 /* Text gradient effect */
