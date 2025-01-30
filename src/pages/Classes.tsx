@@ -1,12 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Dumbbell, Clock, Users, Star, Play } from 'lucide-react';
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Classes = () => {
   useEffect(() => {
@@ -103,25 +101,28 @@ const Classes = () => {
           <h2 className="text-4xl font-bold mb-12 text-center">
             GYM <span className="text-primary">GALLERY</span>
           </h2>
-          <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
-              {glossaryImages.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/3">
-                  <div className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-300 ${
-                    index === Math.floor(glossaryImages.length / 2) ? 'scale-110 z-10' : 'scale-90'
-                  }`}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {glossaryImages.map((image, index) => (
+              <Dialog key={index}>
+                <DialogTrigger>
+                  <div className="aspect-square rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
                     <img
                       src={image}
                       alt={`Gym image ${index + 1}`}
-                      className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl bg-black border-none">
+                  <img
+                    src={image}
+                    alt={`Gym image ${index + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                </DialogContent>
+              </Dialog>
+            ))}
+          </div>
         </div>
       </div>
     </div>

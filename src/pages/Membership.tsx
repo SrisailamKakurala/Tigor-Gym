@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Check, Video } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const Membership = () => {
   useEffect(() => {
@@ -21,30 +21,28 @@ const Membership = () => {
   const plans = [
     {
       name: "Basic",
-      price: "$29",
+      price: "₹2,499",
       features: [
         "Access to gym equipment",
         "Locker room access",
         "Basic fitness assessment",
         "2 group classes per month"
-      ],
-      videoUrl: "https://example.com/basic-training.mp4"
+      ]
     },
     {
       name: "Premium",
-      price: "$59",
+      price: "₹4,999",
       features: [
         "All Basic features",
         "Unlimited group classes",
         "1 personal training session/month",
         "Nutrition consultation",
         "Access to spa facilities"
-      ],
-      videoUrl: "https://example.com/premium-training.mp4"
+      ]
     },
     {
       name: "Elite",
-      price: "$99",
+      price: "₹7,999",
       features: [
         "All Premium features",
         "4 personal training sessions/month",
@@ -52,8 +50,7 @@ const Membership = () => {
         "Priority class booking",
         "Guest passes",
         "Custom workout plans"
-      ],
-      videoUrl: "https://example.com/elite-training.mp4"
+      ]
     }
   ];
 
@@ -77,15 +74,6 @@ const Membership = () => {
                 {plan.price}
                 <span className="text-lg text-gray-400">/month</span>
               </div>
-
-              {/* Sample Class Video Button */}
-              <button 
-                className="flex items-center gap-2 mb-6 bg-primary/20 px-4 py-2 rounded-md hover:bg-primary/30 transition-colors"
-                onClick={() => console.log('Show video modal for', plan.name)}
-              >
-                <Video className="h-5 w-5" />
-                <span>Watch Sample Class</span>
-              </button>
 
               <ul className="space-y-4">
                 {plan.features.map((feature, idx) => (
