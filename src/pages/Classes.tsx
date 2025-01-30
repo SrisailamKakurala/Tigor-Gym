@@ -61,11 +61,11 @@ const Classes = () => {
   ];
 
   const glossaryImages = [
-    "/gym-1.jpg",
-    "/gym-2.jpg",
-    "/gym-3.jpg",
-    "/gym-4.jpg",
-    "/gym-5.jpg"
+    "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1470&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=1470&auto=format&fit=crop"
   ];
 
   return (
